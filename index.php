@@ -2,9 +2,12 @@
 // làm bộ định tuyến (routes)
 include_once "controllers/Controller.php";
 $route = isset($_GET["route"])?$_GET["route"]:"";
-$controller  = new Controller();
+$controller = new Controller();
 
 switch ($route){
-
-    default:$controller->home();
+    case "listsv": $controller->listSV();break;
+    case "themsv": $controller->themSV();break;
+    case "luusv": $controller->luuSV();break;
+    case "aboutus": $controller->aboutUs();break;
+    default: $controller->home();
 }
